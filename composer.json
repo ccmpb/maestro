@@ -6,5 +6,10 @@
             "name": "Colin Campbell",
             "email": "colin@elusivelabs.com"
         }
-    ]
+    ],
+    "autoload": {
+        "classmap": [ 
+            "src"
+        ]
+    }
 }
