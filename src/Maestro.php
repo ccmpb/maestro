@@ -106,4 +106,14 @@ class Maestro
     {
         return $this->getConfigValue('name');
     }
+
+    /**
+     * Get authors 
+     * 
+     * @return array authors 
+     */
+    public function getAuthors()
+    {
+        return $this->getConfigValue('authors');
+    }
 }

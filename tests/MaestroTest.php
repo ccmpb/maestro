@@ -51,17 +51,14 @@ class MaestroTest extends PHPUnit_Framework_TestCase
         $this->maestro->getConfig();
     }
 
+    /**
+     * Sshould be able to retreive composer config values by key 
+     * 
+     * @return void
+     */
     public function testGetConfigValue()
     {
         $this->assertEquals($this->maestro->getConfigValue('name'), 'maestro');
-        $this->assertArrayHasKey(
-            'email', 
-            $this->maestro->getConfigValue('authors')[0]
-        );
-        $this->assertContains(
-            'Colin Campbell', 
-            $this->maestro->getConfigValue('authors')[0]
-        );
     }
 
     /**
@@ -71,5 +68,12 @@ class MaestroTest extends PHPUnit_Framework_TestCase
     public function testGetName()
     {
         $this->assertEquals($this->maestro->getName(), 'maestro');
+    }
+
+    public function testGetAuthors()
+    {
+        $authors = $this->maestro->getAuthors();
+        $this->assertInternalType('array', $authors); 
+        $this->assertArrayHasKey('email', $authors[0]);
     }
 }
