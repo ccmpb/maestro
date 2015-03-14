@@ -1,6 +1,7 @@
 # Maestro
 Maestro, the Composer reflection library.
-Use Maestro to get composer information about your project
+Use Maestro to get information about your project from
+[Composer](https://getcomposer.org)
 
 ### Create a new Maestro object
 ```php
