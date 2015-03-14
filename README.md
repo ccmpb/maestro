@@ -22,3 +22,8 @@ Use Maestro to get information about your project from
 ```php
     $license = $maestro->getConfigValue('license');
 ```
+
+### Get composer PSR4 autoload mapping info
+```php 
+    $psr4 = $maestro->getAutoloadPsr4();
+```

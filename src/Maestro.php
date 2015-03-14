@@ -145,6 +145,16 @@ class Maestro
     }
 
     /**
+     * Get composer autoload psr4 
+     * 
+     * @return array autoload psr4
+     */
+    public function getAutoloadPsr4()
+    {
+        return $this->getComposerFile('autoload_psr4.php');
+    }
+
+    /**
      * get the contets of a composer file 
      * 
      * @throws MaestroException
