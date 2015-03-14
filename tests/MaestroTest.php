@@ -70,10 +70,16 @@ class MaestroTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($this->maestro->getName(), 'maestro');
     }
 
+    /**
+     * Authors should be an array of authors names an eemails 
+     * 
+     * @return void
+     */
     public function testGetAuthors()
     {
         $authors = $this->maestro->getAuthors();
         $this->assertInternalType('array', $authors); 
+        $this->assertArrayHasKey('name', $authors[0]);
         $this->assertArrayHasKey('email', $authors[0]);
     }
 }
