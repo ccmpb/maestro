@@ -134,8 +134,32 @@ class Maestro
         return $this->getConfigValue('authors');
     }
 
+    /**
+     * Get composer autoload classmap 
+     * 
+     * @return array autoload classmap 
+     */
     public function getAutoloadClassMap()
     {
-       
+        return $this->getComposerFile('autoload_classmap.php');
+    }
+
+    /**
+     * get the contets of a composer file 
+     * 
+     * @throws MaestroException
+     * @param string $fileName composer file name 
+     * @return mixed composer file contents 
+     */
+    public function getComposerFile($fileName)
+    {
+        $path = $this->getComposerPath();
+        if (!is_file($path . DIRECTORY_SEPARATOR . $fileName)) {
+            throw new MaestroException(
+                'Could not read file: ' 
+                . $path . DIRECTORY_SEPARATOR .  $fileName
+            );
+        }
+        return include($path . DIRECTORY_SEPARATOR . $fileName);
     }
 }

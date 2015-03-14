@@ -97,8 +97,13 @@ class MaestroTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('email', $authors[0]);
     }
 
+    /**
+     * Autoload classmap should be an array, and have our own maestro lib in it.
+     * 
+     * @return void
+     */
     public function testGetAutoloadClassMap()
     {
-        $this->maestro->getAutoloadClassMap();   
+        $this->assertInternalType('array', $this->maestro->getAutoloadClassMap());   
     }
 }
