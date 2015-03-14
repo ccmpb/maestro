@@ -18,7 +18,7 @@ class MaestroTest extends PHPUnit_Framework_TestCase
     }
     
     /**
-     * config path should be projectroot/composer.json
+     * config path should be PROJECTROOT/composer.json
      * 
      */
     public function testGetConfigPath()
@@ -27,6 +27,20 @@ class MaestroTest extends PHPUnit_Framework_TestCase
             $this->maestro->getConfigPath(), 
             __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'composer.json'
         );
+    }
+
+    /**
+     * composer path should be PROJECTROOT/vendor/composer 
+     * 
+     * 
+     * @return void
+     */
+    public function testGetComposerPath()
+    {
+        $this->assertEquals(
+            $this->maestro->getComposerPath(),
+            __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor/composer'
+        ); 
     }
 
     /**
@@ -81,5 +95,10 @@ class MaestroTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('array', $authors); 
         $this->assertArrayHasKey('name', $authors[0]);
         $this->assertArrayHasKey('email', $authors[0]);
+    }
+
+    public function testGetAutoloadClassMap()
+    {
+        $this->maestro->getAutoloadClassMap();   
     }
 }

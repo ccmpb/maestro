@@ -29,6 +29,13 @@ class Maestro
      * @var array 
      */
     protected $config = [];
+
+    /**
+     * Composer location 
+     * 
+     * @var string
+     */
+    protected $composer = 'vendor/composer';
     
     /**
      * __construct 
@@ -80,6 +87,16 @@ class Maestro
     }
 
     /**
+     * Get path to composer folder
+     * 
+     * @return string composer folder 
+     */
+    public function getComposerPath()
+    {
+        return $this->projectRoot . DIRECTORY_SEPARATOR . $this->composer; 
+    }
+
+    /**
      * getConfigValue 
      * 
      * @param string $key composer config key 
@@ -115,5 +132,10 @@ class Maestro
     public function getAuthors()
     {
         return $this->getConfigValue('authors');
+    }
+
+    public function getAutoloadClassMap()
+    {
+       
     }
 }
