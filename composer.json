@@ -1,6 +1,7 @@
 {
     "name": "maestro",
     "description": "Maestro the Composer reflection library.",
+    "license": "MIT",
     "authors": [
         {
             "name": "Colin Campbell",
