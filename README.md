@@ -1,7 +1,6 @@
-# maestro
-Maestro the Composer reflection library.
-
-## Use Maestro to get composer information about your project
+# Maestro
+Maestro, the Composer reflection library.
+Use Maestro to get composer information about your project
 
 ### Create a new Maestro object
 ```php
@@ -20,6 +19,5 @@ Maestro the Composer reflection library.
 
 ### Get composer option that does not have a convenience function for it 
 ```php
-    $maestro = new Maestro(PROJECT_ROOT);
     $license = $maestro->getConfigValue('license');
 ```
