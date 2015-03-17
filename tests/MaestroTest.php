@@ -106,4 +106,22 @@ class MaestroTest extends PHPUnit_Framework_TestCase
     {
         $this->assertInternalType('array', $this->maestro->getAutoloadClassMap());   
     }
+    
+    /**
+     * Autoload psr4 has our test namespace
+     * 
+     */
+    public function testGetAutoloadPsr4()
+    {
+        $this->assertArrayHasKey('test\\', $this->maestro->getAutoloadPsr4());
+    }
+
+    /**
+     * Autoload psr4 (from the config) has our test namespace
+     * 
+     */
+    public function testGetConfigAutoloadPsr4()
+    {
+        $this->assertArrayHasKey('test\\', $this->maestro->getConfigAutoloadPsr4());
+    }
 }

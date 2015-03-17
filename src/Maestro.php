@@ -155,6 +155,21 @@ class Maestro
     }
 
     /**
+     * Get psr4 autoload from config 
+     * 
+     * 
+     * @return array autoload psr4
+     */
+    public function getConfigAutoloadPsr4()
+    {
+        $autoload = $this->getConfigValue('autoload');
+
+        if ($autoload && array_key_exists('psr-4', $autoload)) {
+            return $autoload['psr-4'];
+        }
+    }
+
+    /**
      * get the contets of a composer file 
      * 
      * @throws MaestroException
