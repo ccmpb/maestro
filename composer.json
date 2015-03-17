@@ -1,6 +1,7 @@
 {
     "name": "maestro",
     "description": "Maestro the Composer reflection library.",
+    "version": "dev-master",
     "license": "MIT",
     "authors": [
         {
