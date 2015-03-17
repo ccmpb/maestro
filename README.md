@@ -40,3 +40,8 @@ Use Maestro to get information about your project from
 ```php 
     $psr4 = $maestro->getAutoloadPsr4();
 ```
+
+### Get the base directory of a namespace
+```php
+    $base = $maestro->getBaseDir(__NAMESPACE__);
+```
