@@ -124,4 +124,13 @@ class MaestroTest extends PHPUnit_Framework_TestCase
     {
         $this->assertArrayHasKey('test\\', $this->maestro->getConfigAutoloadPsr4());
     }
+
+    /**
+     * Test base dir should point to our src folder
+     * 
+     */
+    public function testGetBaseDir()
+    {
+        $this->assertEquals(basename($this->maestro->getBaseDir('test')), 'src');
+    }
 }

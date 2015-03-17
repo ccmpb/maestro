@@ -187,4 +187,30 @@ class Maestro
         }
         return include($path . DIRECTORY_SEPARATOR . $fileName);
     }
+
+    /**
+     * Get the basedir for a particular namespace 
+     * 
+     * @param string $namespace namespace 
+     * 
+     * @return string namespace base dir 
+     */
+    public function getBaseDir($namespace)
+    {
+        $namespaceBase = explode("\\", $namespace)[0];
+        
+        // check composer.json first (this way we only have to open the 1 file)
+        $psr4 = $this->getConfigAutoloadPsr4();
+
+        if ($psr4 && array_key_exists($namespaceBase . "\\", $psr4)) {
+            // psr4 from composer.json is relative, so we need to add the root        
+            return $this->projectRoot . DIRECTORY_SEPARATOR . $psr4[$namespaceBase . "\\"];
+        }
+
+        $psr4 = $this->getAutloadPsr4();
+
+        if ($psr4 && array_key_exists($namespaceBase . "\\" , $psr4)) {
+            return $psr4; 
+        }
+    }
 }
