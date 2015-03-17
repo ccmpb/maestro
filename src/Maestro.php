@@ -210,6 +210,7 @@ class Maestro
         $psr4 = $this->getAutloadPsr4();
 
         if ($psr4 && array_key_exists($namespaceBase . "\\" , $psr4)) {
+            // psr4 from composer autoload will already have the absolute path
             return $psr4; 
         }
     }
