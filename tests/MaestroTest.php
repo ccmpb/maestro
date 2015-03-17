@@ -113,7 +113,7 @@ class MaestroTest extends PHPUnit_Framework_TestCase
      */
     public function testGetAutoloadPsr4()
     {
-        $this->assertArrayHasKey('test\\', $this->maestro->getAutoloadPsr4());
+        $this->assertArrayHasKey('Maestro\\', $this->maestro->getAutoloadPsr4());
     }
 
     /**
@@ -122,7 +122,7 @@ class MaestroTest extends PHPUnit_Framework_TestCase
      */
     public function testGetConfigAutoloadPsr4()
     {
-        $this->assertArrayHasKey('test\\', $this->maestro->getConfigAutoloadPsr4());
+        $this->assertArrayHasKey('Maestro\\', $this->maestro->getConfigAutoloadPsr4());
     }
 
     /**
@@ -131,6 +131,6 @@ class MaestroTest extends PHPUnit_Framework_TestCase
      */
     public function testGetBaseDir()
     {
-        $this->assertEquals(basename($this->maestro->getBaseDir('test')), 'src');
+        $this->assertEquals(basename($this->maestro->getBaseDir('Maestro')), 'src');
     }
 }

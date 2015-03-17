@@ -14,7 +14,7 @@
             "src"
         ],
         "psr-4": {
-            "test\\": "src" 
+            "Maestro\\": "src" 
         }
     }
 }
