@@ -3,6 +3,19 @@ Maestro, the Composer reflection library.
 Use Maestro to get information about your project from
 [Composer](https://getcomposer.org)
 
+### Installation via composer
+```json
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/colincode/maestro.git"
+    }
+]
+```
+```json
+    "maestro": "dev-master"
+```
+
 ### Create a new Maestro object
 ```php
     $maestro = new Maestro(PROJECT_ROOT);
